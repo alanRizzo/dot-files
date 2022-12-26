@@ -1,0 +1,10 @@
+plugin/packer_compiled.lua
+
+*.tmp
+*.temp
+*.bak
+*.backup
+*.old
+*.swp
+htop
+iterm2
