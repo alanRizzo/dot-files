@@ -3,24 +3,22 @@ if not status_ok then
   return
 end
 
--- Grep
-vim.g.dashboard_default_executive = "telescope"
-
--- Custom Footer
-db.custom_footer = { "make America great again" }
-
--- Custom Header
-db.custom_header = {
+local custom_header = {
+  "                                                         ",
+  "                                                         ",
+  "                                                         ",
   " █████╗ ██╗      █████╗ ███╗   ██╗██╗   ██╗██╗███╗   ███╗",
   "██╔══██╗██║     ██╔══██╗████╗  ██║██║   ██║██║████╗ ████║",
   "███████║██║     ███████║██╔██╗ ██║██║   ██║██║██╔████╔██║",
   "██╔══██║██║     ██╔══██║██║╚██╗██║╚██╗ ██╔╝██║██║╚██╔╝██║",
   "██║  ██║███████╗██║  ██║██║ ╚████║ ╚████╔╝ ██║██║ ╚═╝ ██║",
   "╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═══╝  ╚═══╝  ╚═╝╚═╝     ╚═╝",
+  "                                                         ",
+  "                                                         ",
+  "                                                         ",
 }
 
--- Dashboard Sections
-db.custom_center = {
+local custom_center = {
   {
     icon = " 🚽 ",
     desc = "Recently used files                                    ",
@@ -29,19 +27,19 @@ db.custom_center = {
   },
   {
     icon = " 🎪 ",
-    desc = "Find file                                     ",
+    desc = "Find file                                              ",
     action = "Telescope find_files",
     shortcut = "<space> f",
   },
   {
     icon = " 👀 ",
-    desc = "Find word                                     ",
+    desc = "Find word                                              ",
     action = "Telescope live_grep",
     shortcut = "<space> w",
   },
   {
     icon = " 🚪 ",
-    desc = "Key mapping                                         ",
+    desc = "Key mapping                                            ",
     action = ":e ~/.config/nvim/lua/general/mappings.lua",
     shortcut = "' m",
   },
@@ -52,3 +50,12 @@ db.custom_center = {
     shortcut = "",
   },
 }
+
+db.setup({
+  theme = "doom",
+  config = {
+    header = custom_header,
+    center = custom_center,
+    footer = { "make America great again" },
+  },
+})

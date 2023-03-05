@@ -24,10 +24,10 @@ lualine.setup({
   },
   sections = {
     lualine_a = { { "mode" } },
-    lualine_b = { "filename" },
+    lualine_b = { { "filename", path = 1 } },
     lualine_c = {},
     lualine_x = {},
-    lualine_y = { "branch", "filetype", "progress" },
+    lualine_y = { "filetype", "progress" },
     lualine_z = { { "location" } },
   },
   inactive_sections = {

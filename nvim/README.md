@@ -25,7 +25,7 @@
 
 ## About
 
-This configuration is oriented for Python :snake: development
+This configuration is Python :snake: development oriented
 
 ## Quickstart
 
@@ -137,7 +137,6 @@ $HOME/.config/nvim
 
 ## Additional features
 
-- Whick key popup via [which-key](https://github.com/folke/which-key.nvim)
 - Default theme via [tokyonight](https://github.com/marko-cerovac/material.nvim)
 - Enhanced syntax highlighting via [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 - Dashboard via [dashboard-nvim](https://github.com/glepnir/dashboard-nvim)

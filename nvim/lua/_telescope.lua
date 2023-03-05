@@ -13,6 +13,7 @@ telescope.setup({
   defaults = {
     file_sorter = sorters.get_fzy_sorter,
     generic_sorter = sorters.get_fzy_sorter,
+    file_ignore_patterns = { "node_modules", "package" },
   },
   extensions = {
     -- Fast, fast, really fast sorter
@@ -27,5 +28,6 @@ local builtin = require("telescope.builtin")
 
 vim.keymap.set("n", "<space>f", builtin.find_files)
 vim.keymap.set("n", "<space>w", builtin.live_grep)
-vim.keymap.set("n", "<space>h", builtin.help_tags)
-vim.keymap.set("n", "<space>s", "^wy$<ESC>:lua Substitute()<CR>:Telescope live_grep default_text=<C-r>0<CR>")
+vim.keymap.set("n", "<space>g", builtin.git_status)
+--jset("n", "<space>s", "^wy$<ESC>:lua Substitute()<CR>:Telescope live_grep default_text=<C-r>0<CR>")
+vim.keymap.set("n", "<space>u", builtin.grep_string)

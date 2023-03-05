@@ -7,11 +7,11 @@ g.loaded_perl_provider = 0
 -- Deactivate Ruby Provider
 g.loaded_ruby_provider = 0
 
--- Deactivate Node Provider
-g.loaded_node_provider = 0
-
 -- Deactivate Python 2 Provider
 g.loaded_python_provider = 0
+
+-- Load Node Provider
+g.node_host_prog = "/opt/homebrew/lib/node_modules/npm"
 
 -- Load Python 3 Provider
 g.python3_host_prog = "~/.pyenv/versions/neovim/bin/python"
