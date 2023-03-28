@@ -104,7 +104,7 @@
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-      family: MesloLGS Nerd Font
+      family: MesloLGS NF
     #family: Menso
 
     # The `style` can be specified to pick a specific face.
@@ -116,7 +116,7 @@
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-      family: MesloLGS Nerd Font
+      family: MesloLGS NF
 
     # The `style` can be specified to pick a specific face.
     #style: Bold
@@ -127,7 +127,7 @@
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
-      family: MesloLGS Nerd Font
+      family: MesloLGS NF
 
     # The `style` can be specified to pick a specific face.
     #style: Italic
@@ -138,7 +138,7 @@
     #
     # If the bold italic family is not specified, it will fall back to the
     # value specified for the normal font.
-      family: MesloLGS Nerd Font
+      family: MesloLGS NF
 
     # The `style` can be specified to pick a specific face.
     #style: Bold Italic

@@ -40,6 +40,11 @@ return require("packer").startup(function(use)
   -- Snippets
   use("L3MON4D3/LuaSnip")            --snippet engine
   use("rafamadriz/friendly-snippets") -- a bunch of snippets to use
+  use("mattn/emmet-vim")
+  use({
+    "dsznajder/vscode-es7-javascript-react-snippets",
+    run = "yarn install --frozen-lockfile && yarn compile",
+  })
 
   -- LSP
   -- manage external editor tooling such as LSP servers, DAP servers, linters
@@ -65,6 +70,15 @@ return require("packer").startup(function(use)
       "nvim-telescope/telescope-fzy-native.nvim",
       "BurntSushi/ripgrep",
     },
+  })
+
+  -- surrounding pairs
+  use({
+    "kylechui/nvim-surround",
+    tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+    config = function()
+      require("nvim-surround").setup({})
+    end,
   })
 
   -- Improve the deletion of buffers
