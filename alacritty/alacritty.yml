@@ -145,7 +145,7 @@ font:
     # value specified for the normal font.
     #family: monospace
     family: MesloLGS NF
-    style: Bold
+    style: Regular
 
 
     # The `style` can be specified to pick a specific face.
