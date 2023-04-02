@@ -66,8 +66,8 @@ schemes:
 
   atom_one_light: &atom_one_light
     primary:
-      background: '#f8f8f8'
-      foreground: '#2a2b33'
+      background: '#2a2b33'
+      foreground: '#f8f8f8'
     normal:
       black:   '#000000'
       red:     '#de3d35'
@@ -1452,4 +1452,4 @@ schemes:
       cyan:    '#00ffff'
       white:   '#ffffff'
 
-colors: *remedy_dark
+colors: *material_theme_mod
