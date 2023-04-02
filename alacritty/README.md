@@ -1,4 +1,4 @@
-<div align="center"> 
+<div align="center">
  <a href="https://github.com/alanRizzo/dot-files/tree/main/alacritty"><img alt="Alacritty" src="https://user-images.githubusercontent.com/36242460/209569533-73974493-3950-4814-ac87-475f7b13e86d.png" height="100"></a>
 </div>
 
@@ -29,7 +29,4 @@ Make sure to replace **<desired_schema>** with the name of the schema you want t
 
 
 ## Selfie
-<img width="1440" alt="Captura de pantalla 2023-04-02 a la(s) 16 51 48" src="https://user-images.githubusercontent.com/36242460/229375792-41b89128-a61d-4767-9055-d6976e9b4c3e.png">
-
-
-
+<img width="1440" alt="alacritty-setup" src="https://user-images.githubusercontent.com/36242460/229375792-41b89128-a61d-4767-9055-d6976e9b4c3e.png">

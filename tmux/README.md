@@ -6,7 +6,6 @@
 
 To install Tmux, follow the instructions outlined in the Tmux [installation guide](https://github.com/tmux/tmux/wiki/Installing)
 
-
 ## Wheater
 
 By default, the Tmux config includes a line that displays weather information using the wttr.in service.
@@ -19,3 +18,6 @@ WEATHER='#(curl -s wttr.in/?format\="%%C+%%t")'
 ```
 
 This will display the weather condition and temperature on the right side of your Tmux status bar.
+
+## Selfie
+<img width="1440" alt="tmux-bar" src="https://user-images.githubusercontent.com/108890369/229379153-d7cc64e0-6fca-4aa6-88c1-99517fc9351f.png">
