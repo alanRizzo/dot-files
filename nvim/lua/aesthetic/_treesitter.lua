@@ -5,5 +5,10 @@ end
 
 treesitter.setup({
   ensure_installed = { "python", "lua", "vim", "javascript", "help" },
-  highlight = { enable = true },
+  highlight = { enable = false },
+  rainbow = {
+    enable = true,
+    extended_mode = true,
+    max_file_lines = 1000,
+  },
 })
