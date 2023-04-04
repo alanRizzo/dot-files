@@ -99,13 +99,27 @@ return require("packer").startup(function(use)
   use({ "catppuccin/nvim", as = "catppuccin" })
 
   -- UI Plugins
-  use({ "glepnir/dashboard-nvim", event = "VimEnter" })
+  use({ "glepnir/dashboard-nvim", event = "VimEnter", requires = "nvim-tree/nvim-web-devicons" })
   use("nvim-lualine/lualine.nvim")
   use({ "akinsho/bufferline.nvim", tag = "v3.*", requires = "nvim-tree/nvim-web-devicons" })
   use({ "nvim-tree/nvim-tree.lua", requires = "nvim-tree/nvim-web-devicons", tag = "nightly" })
 
   -- Git
-  use("lewis6991/gitsigns.nvim")
+  use({
+    "dinhhuy258/git.nvim",
+    config = function()
+      require("git").setup({ default_mappings = true })
+    end,
+  })
+
+  -- Autopair
+  use({
+    "altermo/ultimate-autopair.nvim",
+    event = { "InsertEnter", "CmdlineEnter" },
+    config = function()
+      require("ultimate-autopair").setup({})
+    end,
+  })
 
   -- Tmux / Vim pane navigator
   use({ "alexghergh/nvim-tmux-navigation" })
