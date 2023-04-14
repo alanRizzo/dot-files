@@ -1452,4 +1452,4 @@ schemes:
       cyan:    '#00ffff'
       white:   '#ffffff'
 
-colors: *material_theme_mod
+colors: *tomorrow_night_bright

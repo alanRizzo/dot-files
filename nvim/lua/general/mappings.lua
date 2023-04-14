@@ -13,6 +13,7 @@ vim.cmd('inoreabbrev ipdb __import__("ipdb").set_trace()')
 
 -- Edit mapping faster
 map("n", "<Leader>m", ":vsplit ~/.config/nvim/lua/general/mappings.lua<CR>")
+map("n", "<Leader>p", ":vsplit ~/.config/nvim/lua/packages.lua<CR>")
 
 -- Reload file
 map("n", "<Leader>s", ":source %<CR>")

@@ -99,7 +99,10 @@ return require("packer").startup(function(use)
   use({ "catppuccin/nvim", as = "catppuccin" })
 
   -- UI Plugins
-  use({ "glepnir/dashboard-nvim", event = "VimEnter", requires = "nvim-tree/nvim-web-devicons" })
+  use({
+    "goolord/alpha-nvim",
+    requires = { "nvim-tree/nvim-web-devicons" },
+  })
   use("nvim-lualine/lualine.nvim")
   use({ "akinsho/bufferline.nvim", tag = "v3.*", requires = "nvim-tree/nvim-web-devicons" })
   use({ "nvim-tree/nvim-tree.lua", requires = "nvim-tree/nvim-web-devicons", tag = "nightly" })
