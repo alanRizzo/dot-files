@@ -3,7 +3,7 @@
   <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/alanRizzo/dot-files?style=for-the-badge">
   <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/alanRizzo/dot-files?style=for-the-badge">
   <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/alanRizzo/dot-files?style=for-the-badge">
-  <img alt="Neovim Minimum Version" src="https://img.shields.io/badge/Neovim-0.6.0+-blueviolet.svg?style=for-the-badge&logo=Neovim">
+  <img alt="Neovim Minimum Version" src="https://img.shields.io/badge/Neovim-0.8.0+-blueviolet.svg?style=for-the-badge&logo=Neovim">
   <br>
   <p>:boat: My Neovim setup :boat:</p>
 </div>
