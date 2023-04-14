@@ -149,3 +149,7 @@ $HOME/.config/nvim
 - Snippet support via [LuaSnip](https://github.com/L3MON4D3/LuaSnip)
 - Buffer management via [bufdel](https://github.com/rmagatti/ojroques/nvim-bufdel)
 - Git support via [gitsigns](https://github.com/lewis6991/gitsigns.nvim)
+
+## Selfie
+<img width="1430" alt="Captura de pantalla 2023-04-14 a la(s) 12 13 57" src="https://user-images.githubusercontent.com/36242460/232085167-2c0a056f-5db5-4ef9-b704-e2a7a1b584ba.png">
+
