@@ -1452,4 +1452,4 @@ schemes:
       cyan:    '#00ffff'
       white:   '#ffffff'
 
-colors: *tomorrow_night_bright
+colors: *afterglow
