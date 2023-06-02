@@ -16,6 +16,9 @@ infocmp alacritty
 
 If the above command returns an error, refer to the [post-build instruction](https://github.com/alacritty/alacritty/blob/master/INSTALL.md#post-build)
 
+# First install zsh and tmux or comment shell configuration in alacritty.yml
+# Copy this files inside .config/alacritty/
+# install the font family
 
 ## Schemas
 There are a list of color schemas to personalize your terminal.

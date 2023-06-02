@@ -111,9 +111,9 @@ window:
   #   - OnlyRight
   #   - Both
   #   - None (default)
-  option_as_alt: Both
+  #option_as_alt: None
 
-scrolling:
+#scrolling:
   # Maximum number of lines in the scrollback buffer.
   # Specifying '0' will disable scrolling.
   #history: 10000
@@ -144,12 +144,10 @@ font:
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
     #family: monospace
-    family: MesloLGS NF
-    style: Regular
-
 
     # The `style` can be specified to pick a specific face.
-    #style: Bold
+    family: MesloLGS NF
+    style: Bold
 
   # Italic font face
   italic:
@@ -158,11 +156,10 @@ font:
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
     #family: monospace
-    family: MesloLGS NF
-    style: Italic
 
     # The `style` can be specified to pick a specific face.
-    #style: Italic
+    family: MesloLGS NF
+    style: Italic
 
   # Bold italic font face
   bold_italic:
@@ -171,11 +168,10 @@ font:
     # If the bold italic family is not specified, it will fall back to the
     # value specified for the normal font.
     #family: monospace
-    family: MesloLGS NF
-    style: Bold Italic
 
     # The `style` can be specified to pick a specific face.
-    #style: Bold Italic
+    family: MesloLGS NF
+    style: Bold Italic
 
   # Point size
   size: 13.0
@@ -398,7 +394,6 @@ selection:
   # This string contains all characters that are used as separators for
   # "semantic words" in Alacritty.
   #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
-
   # When set to `true`, selected text will be copied to the primary clipboard.
   save_to_clipboard: true
 
