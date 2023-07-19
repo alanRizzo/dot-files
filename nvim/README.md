@@ -25,7 +25,7 @@ This configuration is Python :snake: development oriented
 Clone the repo to get the configuration
 
 ```bash
-git clone --depth 1 https://github.com/alan-rizzo/dotfiles ~/.config/nvim
+git clone --depth 1 https://github.com/alanRizzo/dot-files ~/.config
 ```
 
 If you are using zsh paste this in your .zshrc config file
