@@ -1,6 +1,6 @@
 local status_ok, lualine = pcall(require, "lualine")
 if not status_ok then
-  return
+	return
 end
 
 local cp = require("catppuccin.palettes").get_palette()
@@ -17,26 +17,26 @@ custom_catppuccin.inactive.b.fg = cp.surface0
 custom_catppuccin.inactive.c.bg = cp.base
 
 lualine.setup({
-  options = {
-    theme = custom_catppuccin,
-    component_separators = "|",
-    section_separators = { left = "", right = "" },
-  },
-  sections = {
-    lualine_a = { { "mode" } },
-    lualine_b = { { "filename", path = 1 } },
-    lualine_c = {},
-    lualine_x = {},
-    lualine_y = { "filetype", "progress" },
-    lualine_z = { { "location" } },
-  },
-  inactive_sections = {
-    lualine_a = { "filename" },
-    lualine_b = {},
-    lualine_c = {},
-    lualine_x = {},
-    lualine_y = {},
-    lualine_z = {},
-  },
-  extensions = { "quickfix", "fugitive", "nvim-tree" },
+	options = {
+		theme = custom_catppuccin,
+		component_separators = "|",
+		section_separators = { left = "", right = "" },
+	},
+	sections = {
+		lualine_a = { { "mode" } },
+		lualine_b = { { "filename", path = 1 } },
+		lualine_c = {},
+		lualine_x = {},
+		lualine_y = { "filetype", "progress" },
+		lualine_z = { { "location" } },
+	},
+	inactive_sections = {
+		lualine_a = { "filename" },
+		lualine_b = {},
+		lualine_c = {},
+		lualine_x = {},
+		lualine_y = {},
+		lualine_z = {},
+	},
+	extensions = { "quickfix", "fugitive", "nvim-tree" },
 })

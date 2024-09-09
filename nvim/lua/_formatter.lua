@@ -1,52 +1,30 @@
-local status_ok, formatter = pcall(require, "formatter")
+local status_ok, formatter = pcall(require, "conform")
 if not status_ok then
-  return
-end
-
-local function custom_black()
-  return {
-    exe = "black",
-    args = {
-      "--fast",
-      "-",
-    },
-    stdin = true,
-  }
-end
-
-local function custom_isort()
-  return {
-    exe = "isort",
-    args = {
-      "--profile black",
-      "-",
-    },
-    stdin = true,
-  }
+	return
 end
 
 formatter.setup({
-  filetype = {
-    -- Formatter configurations for filetype go here
-    -- and will be executed in order
-    python = {
-      custom_black,
-      custom_isort,
-    },
-    lua = {
-      require("formatter.filetypes.lua").stylua,
-    },
-    javascript = require("formatter.filetypes.javascript").prettier,
-    javascriptreact = {
-      require("formatter.filetypes.javascriptreact").prettier,
-    },
-    ["*"] = {
-      require("formatter.filetypes.any").remove_trailing_whitespace,
-    },
-  },
+	formatters_by_ft = {
+		lua = { "stylua" },
+		-- Conform will run multiple formatters sequentially
+		python = {
+			-- To fix auto-fixable lint errors.
+			"ruff_fix",
+			-- To run the Ruff formatter.
+			"ruff_format",
+			-- To organize the imports.
+			"ruff_organize_imports",
+		},
+		rust = { "rustfmt" },
+	},
+	format_on_save = {
+		lsp_format = "fallback",
+		async = false,
+		timeout_ms = 500,
+	},
 })
 
---TODO: make this work
--- automatically run :PackerSync whenever packages.lua changes
---vim.cmd([[au BufWritePost packages.lua :source <afile> | PackerSync]])
-vim.api.nvim_create_autocmd({ "BufWritePost" }, { command = "FormatWrite" })
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+	pattern = "Jenkinsfile*",
+	command = "set filetype=groovy",
+})

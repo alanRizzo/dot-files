@@ -3,135 +3,140 @@ local fn = vim.fn
 -- Install Packer if not installed
 local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
-  PACKER_BOOTSTRAP =
-      fn.system({ "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path })
-  vim.notify("Intalling packer...")
-  vim.cmd([[packadd packer.nvim]])
+	PACKER_BOOTSTRAP =
+		fn.system({ "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path })
+	vim.notify("Intalling packer...")
+	vim.cmd([[packadd packer.nvim]])
 end
 
 -- Protected call for the first time and avoid errors
 local status_ok, packer = pcall(require, "packer")
 if not status_ok then
-  return
+	return
 end
 
 -- Packer with popup window
 packer.init({
-  display = {
-    open_fn = function()
-      return require("packer.util").float({ border = "rounded" })
-    end,
-  },
+	display = {
+		open_fn = function()
+			return require("packer.util").float({ border = "rounded" })
+		end,
+	},
 })
 
 return require("packer").startup(function(use)
-  -- Packer Itself
-  use("wbthomason/packer.nvim")
+	-- Packer Itself
+	use("wbthomason/packer.nvim")
 
-  -- CMP plugins
-  use("hrsh7th/nvim-cmp")         -- The completion plugin
-  use("hrsh7th/cmp-buffer")       -- buffer completions
-  use("hrsh7th/cmp-path")         -- path completions
-  use("hrsh7th/cmp-cmdline")      -- cmdline completions
-  use("saadparwaiz1/cmp_luasnip") -- snippet completions
-  use("hrsh7th/cmp-nvim-lsp")
-  use("hrsh7th/cmp-nvim-lua")
+	-- CMP plugins
+	use("hrsh7th/nvim-cmp") -- The completion plugin
+	use("hrsh7th/cmp-buffer") -- buffer completions
+	use("hrsh7th/cmp-path") -- path completions
+	use("hrsh7th/cmp-cmdline") -- cmdline completions
+	use("saadparwaiz1/cmp_luasnip") -- snippet completions
+	use("hrsh7th/cmp-nvim-lsp")
+	use("hrsh7th/cmp-nvim-lua")
 
-  -- Snippets
-  use("L3MON4D3/LuaSnip")             --snippet engine
-  use("rafamadriz/friendly-snippets") -- a bunch of snippets to use
-  use("mattn/emmet-vim")
-  use({
-    "dsznajder/vscode-es7-javascript-react-snippets",
-    run = "yarn install --frozen-lockfile && yarn compile",
-  })
+	-- Snippets
+	use("L3MON4D3/LuaSnip") --snippet engine
+	use("rafamadriz/friendly-snippets") -- a bunch of snippets to use
+	use("mattn/emmet-vim")
+	use({
+		"dsznajder/vscode-es7-javascript-react-snippets",
+		run = "yarn install --frozen-lockfile && yarn compile",
+	})
 
-  -- LSP
-  -- manage external editor tooling such as LSP servers, DAP servers, linters
-  use({
-    "junnplus/lsp-setup.nvim",
-    requires = {
-      "neovim/nvim-lspconfig",
-      "williamboman/mason.nvim",
-      "williamboman/mason-lspconfig.nvim",
-    },
-  })
+	-- LSP
+	-- manage external editor tooling such as LSP servers, DAP servers, linters
+	use({
+		"junnplus/lsp-setup.nvim",
+		requires = {
+			"neovim/nvim-lspconfig",
+			"williamboman/mason.nvim",
+			"williamboman/mason-lspconfig.nvim",
+		},
+	})
 
-  -- Formatter
-  use({ "mhartington/formatter.nvim" })
+	use({ "ckipp01/nvim-jenkinsfile-linter", requires = { "nvim-lua/plenary.nvim" } })
 
-  -- Navigation panel
-  use({
-    "nvim-telescope/telescope.nvim",
-    tag = "0.1.*",
-    requires = {
-      "nvim-lua/popup.nvim",
-      "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope-fzy-native.nvim",
-      "BurntSushi/ripgrep",
-    },
-  })
+	-- Formatter
+	use({ "stevearc/conform.nvim" })
 
-  -- surrounding pairs
-  use({
-    "kylechui/nvim-surround",
-    tag = "*", -- Use for stability; omit to use `main` branch for the latest features
-    config = function()
-      require("nvim-surround").setup({})
-    end,
-  })
+	-- Navigation panel
+	use({
+		"nvim-telescope/telescope.nvim",
+		tag = "0.1.*",
+		requires = {
+			"nvim-lua/popup.nvim",
+			"nvim-lua/plenary.nvim",
+			"nvim-telescope/telescope-fzy-native.nvim",
+			"BurntSushi/ripgrep",
+		},
+	})
 
-  -- Improve the deletion of buffers
-  use("ojroques/nvim-bufdel")
+	-- surrounding pairs
+	use({
+		"kylechui/nvim-surround",
+		tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+		config = function()
+			require("nvim-surround").setup({})
+		end,
+	})
 
-  -- Syntax Highlighting
-  use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
+	-- Improve the deletion of buffers
+	use("ojroques/nvim-bufdel")
 
-  -- Color highlighter
-  use({
-    "norcalli/nvim-colorizer.lua",
-    config = function()
-      require("colorizer").setup()
-    end,
-  })
+	-- Syntax Highlighting
+	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 
-  -- Themes
-  use({ "catppuccin/nvim", as = "catppuccin" })
+	-- Color highlighter
+	use({
+		"norcalli/nvim-colorizer.lua",
+		config = function()
+			require("colorizer").setup()
+		end,
+	})
 
-  -- UI Plugins
-  use({
-    "goolord/alpha-nvim",
-    requires = { "nvim-tree/nvim-web-devicons" },
-  })
-  use("nvim-lualine/lualine.nvim")
-  use({ "akinsho/bufferline.nvim", tag = "v3.*", requires = "nvim-tree/nvim-web-devicons" })
-  use({ "nvim-tree/nvim-tree.lua", requires = "nvim-tree/nvim-web-devicons", tag = "nightly" })
+	-- Themes
+	use({ "catppuccin/nvim", as = "catppuccin" })
 
-  -- Git
-  use({
-    "dinhhuy258/git.nvim",
-    config = function()
-      require("git").setup({ default_mappings = true })
-    end,
-  })
+	-- UI Plugins
+	use({
+		"goolord/alpha-nvim",
+		requires = { "nvim-tree/nvim-web-devicons" },
+	})
+	use({ "nvim-lualine/lualine.nvim" })
+	use({ "akinsho/bufferline.nvim", requires = "nvim-tree/nvim-web-devicons" })
+	use({ "nvim-tree/nvim-tree.lua", requires = "nvim-tree/nvim-web-devicons" })
 
-  -- Git Signs
-  use({ "lewis6991/gitsigns.nvim" })
+	-- Git
+	use({
+		"dinhhuy258/git.nvim",
+		config = function()
+			require("git").setup({ default_mappings = true })
+		end,
+	})
 
-  -- Autopair
-  use({
-    "altermo/ultimate-autopair.nvim",
-    event = { "InsertEnter", "CmdlineEnter" },
-    config = function()
-      require("ultimate-autopair").setup({})
-    end,
-  })
+	-- Git Signs
+	use({ "lewis6991/gitsigns.nvim" })
 
-  -- Tmux / Vim pane navigator
-  use({ "alexghergh/nvim-tmux-navigation" })
+	-- Autopair
+	use({
+		"altermo/ultimate-autopair.nvim",
+		event = { "InsertEnter", "CmdlineEnter" },
+		branch = "v0.6", --recommended as each new version will have breaking changes
+		config = function()
+			require("ultimate-autopair").setup({
+				--Config goes here
+			})
+		end,
+	})
 
-  -- Automatically set up your configuration after cloning packer.nvim
-  if PACKER_BOOTSTRAP then
-    require("packer").sync()
-  end
+	-- Tmux / Vim pane navigator
+	use({ "alexghergh/nvim-tmux-navigation" })
+
+	-- Automatically set up your configuration after cloning packer.nvim
+	if PACKER_BOOTSTRAP then
+		require("packer").sync()
+	end
 end)
