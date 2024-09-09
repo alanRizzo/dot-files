@@ -22,6 +22,9 @@ lsp_setup.setup({
 	},
 	servers = {
 		pyright = require("lsp.settings._pyright"),
-		lua_ls = require("lsp.settings._lua_ls"),
+		cucumber_language_server = {},
+	},
+	inlay_hints = {
+		enabled = true,
 	},
 })

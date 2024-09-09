@@ -4,7 +4,7 @@ if not status_ok then
 end
 
 treesitter.setup({
-	ensure_installed = { "python", "lua", "vim", "javascript", "tsx", "vimdoc" },
+	ensure_installed = { "python", "lua", "vim", "markdown", "vimdoc" },
 	highlight = { enable = true, disable = { "" } },
 	autotag = {
 		enable = true,

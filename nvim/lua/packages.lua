@@ -41,10 +41,6 @@ return require("packer").startup(function(use)
 	use("L3MON4D3/LuaSnip") --snippet engine
 	use("rafamadriz/friendly-snippets") -- a bunch of snippets to use
 	use("mattn/emmet-vim")
-	use({
-		"dsznajder/vscode-es7-javascript-react-snippets",
-		run = "yarn install --frozen-lockfile && yarn compile",
-	})
 
 	-- LSP
 	-- manage external editor tooling such as LSP servers, DAP servers, linters
