@@ -5,7 +5,6 @@ return {
         typeCheckingMode = "basic",
         autoSearchPaths = true,
         useLibraryCodeForTypes = true,
-        --python.venvPath
       },
     },
   },
