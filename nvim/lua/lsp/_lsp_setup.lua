@@ -21,11 +21,14 @@ lsp_setup.setup({
 		["]d"] = "lua vim.diagnostic.goto_next()",
 	},
 	servers = {
-		pyright = require("lsp.settings._pyright"),
 		lua_ls = require("lsp.settings._lua_ls"),
-		cucumber_language_server = {},
-
+		-- cucumber_language_server = require("lsp.settings._cucumber"),
 		groovyls = {},
+		dockerls = {},
+		yamlls = {},
+		basedpyright = require("lsp.settings._basedpyright"),
+		bashls = {},
+		--ruff = require("lsp.settings._ruff"),
 	},
 	inlay_hints = {
 		enabled = true,

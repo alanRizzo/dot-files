@@ -17,15 +17,25 @@ formatter.setup({
 		},
 		groovy = { "npm-groovy-lint" },
 		json = { "fixjson" },
+		toml = { "taplo" },
 	},
 	format_on_save = {
 		lsp_format = "fallback",
 		async = false,
-		timeout_ms = 200,
+		quiet = false,
+		timeout_ms = 300,
 	},
 })
 
-vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-	pattern = "Jenkinsfile*",
-	command = "set filetype=groovy",
-})
+local function set_filetype(pattern, filetype)
+	vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+		pattern = pattern,
+		callback = function()
+			vim.bo.filetype = filetype
+		end,
+	})
+end
+
+-- Set filetype for Dockerfile and Jenkinsfile
+set_filetype("Dockerfile*", "Dockerfile")
+set_filetype("Jenkinsfile*", "groovy")
