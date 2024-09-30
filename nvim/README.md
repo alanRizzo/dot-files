@@ -136,7 +136,6 @@ $HOME/.config/nvim
 - Statusline via [lualine](https://github.com/nvim-lualine/lualine.nvim)
 - Explore files via [nvim-tree](https://github.com/kyazdani42/nvim-tree.lua)
 - Fuzzy finder via [Telescope](https://github.com/nvim-telescope/telescope.nvim)
-- Debugging via [vim-test](https://github.com/vim-test/vim-test)
 - Auto LSP installation via [nvim-lsp-installer](https://github.comwilliamboman/nvim-lsp-installer)
 - Autocompletion via [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
 - Snippet support via [LuaSnip](https://github.com/L3MON4D3/LuaSnip)

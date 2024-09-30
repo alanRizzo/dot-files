@@ -5,7 +5,7 @@ end
 
 treesitter.setup({
 	ensure_installed = { "python", "lua", "vim", "markdown", "vimdoc" },
-	highlight = { enable = true, disable = { "" } },
+	highlight = { enable = true, additional_vim_regex_highlighting = false },
 	autotag = {
 		enable = true,
 	},
