@@ -23,7 +23,6 @@ lsp_setup.setup({
 	servers = {
 		lua_ls = require("lsp.settings._lua_ls"),
 		-- cucumber_language_server = require("lsp.settings._cucumber"),
-		groovyls = {},
 		dockerls = {},
 		yamlls = {},
 		basedpyright = require("lsp.settings._basedpyright"),
