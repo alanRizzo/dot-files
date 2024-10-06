@@ -1,7 +1,4 @@
 nvim/plugin/packer_compiled.lua
-ptpython/
-sendria/
-zed/
 
 *.tmp
 *.temp
@@ -9,5 +6,3 @@ zed/
 *.backup
 *.old
 *.swp
-htop
-iterm2
