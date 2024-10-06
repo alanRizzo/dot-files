@@ -1,0 +1,73 @@
+# -------------------------------------------------------------------------------------------------
+# Custom config
+# -------------------------------------------------------------------------------------------------
+
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
+
+eval "$(zoxide init zsh)"
+eval "$(uv generate-shell-completion zsh)"
+
+# export PTPYTHON_CONFIG_HOME="$HOME/.config/ptpython/"
+
+# -------------------------------------------------------------------------------------------------
+# Bat config
+# -------------------------------------------------------------------------------------------------
+
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+
+# -------------------------------------------------------------------------------------------------
+# Virtualenv config
+# -------------------------------------------------------------------------------------------------
+
+auto_python_venv() {
+  local VENV_DIR="./.venv"
+  local CURRENT_DIR="$PWD"
+  local PREVIOUS_DIR="$AUTO_PYTHON_VENV_ROOT"
+
+is_not_child_or_same() {
+    local parent=$(realpath "$1")
+    local folder=$(realpath "$2")
+    [[ "$folder" != "$parent" && "$folder" != "$parent"/* ]]
+}
+
+  if [[ "$CURRENT_DIR" != "$PREVIOUS_DIR" ]]; then
+    # Deactivate virtualenv if it's active and the current directory is unrelated to the parent
+    if [[ -n "$VIRTUAL_ENV" ]] && is_not_child_or_same "$PARENT_DIR" "$CURRENT_DIR"; then
+        deactivate
+    fi
+
+    # Activate virtualenv if .venv exists and no virtualenv is active
+    if [[ -d "$VENV_DIR" && -z $VIRTUAL_ENV ]]; then
+      source "$VENV_DIR/bin/activate"
+      PARENT_DIR=$(dirname "$VIRTUAL_ENV")
+    fi
+  fi
+
+  # Update the root directory
+  export AUTO_PYTHON_VENV_ROOT="$CURRENT_DIR"
+}
+
+# Hook the function to be called when the directory changes
+autoload -U add-zsh-hook
+add-zsh-hook chpwd auto_python_venv
+
+# Initialize AUTO_PYTHON_VENV_ROOT
+export AUTO_PYTHON_VENV_ROOT="$PWD"
+
+# -------------------------------------------------------------------------------------------------
+# Alias
+# -------------------------------------------------------------------------------------------------
+
+alias fzf='fzf --preview "bat --color=always --style=numbers --line-range=:500 {}"'
+
+alias vim=nvim
+
+alias yolo='git commit -m "$(curl -s https://whatthecommit.com/index.txt)"'
+alias gl='git pull'
+alias gd='git diff'
+alias ga='git add'
+alias gp='git push'
+alias gst='git status'
+alias gco='git checkout'
+alias gcmsg='git commit --message'

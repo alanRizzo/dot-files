@@ -18,6 +18,7 @@ formatter.setup({
 		groovy = { "npm-groovy-lint" },
 		json = { "fixjson" },
 		toml = { "taplo" },
+    zsh = { "beautysh" },
 	},
 	format_on_save = {
 		lsp_format = "fallback",

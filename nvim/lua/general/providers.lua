@@ -14,7 +14,7 @@ g.loaded_python_provider = 0
 g.node_host_prog = "/opt/homebrew/lib/node_modules/npm"
 
 -- Load Python 3 Provider
-g.python3_host_prog = "~/.pyenv/versions/neovim/bin/python"
+g.python3_host_prog = "~/.pyenv/.venv/bin/python"
 
 -- Deactivate plugins in $RUNTIME
 g.loaded_tutor = 1

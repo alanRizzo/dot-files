@@ -11,7 +11,7 @@ vim.g.loaded_netrwPlugin = 1
 vim.opt.termguicolors = true
 
 nvim_tree.setup({
-	update_cwd = false,
+	update_cwd = true,
 	filters = {
 		dotfiles = true,
 		custom = { "__pycache__" },

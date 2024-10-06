@@ -57,6 +57,33 @@ To install a LSP/DAP/Linter/Formater run:
 :Mason
 ```
 
+## Python Virtualenv
+
+If you plan to use per-project virtualenvs often, you should assign one virtualenv for 
+Nvim and hard-code the interpreter path via g:python3_host_prog so that the "pynvim" 
+package is not required for each virtualenv.
+
+Example using pyenv:
+
+```zsh
+uv venv --python {Specify the latest Python3 version}
+source .venv/bin/activate
+
+uv pip install pynvim
+
+which python  # Note the path
+```
+The last command reports the interpreter path, add it to your init.vim:
+
+```lua
+let g:python3_host_prog = '/path/to/neovim/bin/python'
+```
+
+More info: 
+- https://neovim.io/doc/user/provider.html
+- https://github.com/deoplete-plugins/deoplete-jedi/wiki/Setting-up-Python-for-Neovim
+
+
 ## Mappings
 
 Leader key: <kbd>'</kbd>
