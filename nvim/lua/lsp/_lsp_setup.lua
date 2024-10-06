@@ -28,6 +28,7 @@ lsp_setup.setup({
 		basedpyright = require("lsp.settings._basedpyright"),
 		lua_ls = require("lsp.settings._lua_ls"),
 		--ruff = require("lsp.settings._ruff"),
+    marksman = {},
 	},
 	inlay_hints = {
 		enabled = true,
