@@ -6,6 +6,7 @@
 source <(fzf --zsh)
 
 eval "$(zoxide init zsh)"
+eval "$(starship init zsh)"
 eval "$(uv generate-shell-completion zsh)"
 
 # export PTPYTHON_CONFIG_HOME="$HOME/.config/ptpython/"
