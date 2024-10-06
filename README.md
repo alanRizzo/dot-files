@@ -21,3 +21,12 @@ But hey, if you're feeling adventurous and want to live life on the edge, go ahe
 Just be prepared for your computer to explode from all the awesomeness.
 
 So go forth, my friends, and let these configs change your life forever.
+
+
+## Quickstart
+
+Clone the repo to get the configuration
+
+```zsh
+git clone --depth 1 https://github.com/alanRizzo/dot-files ~/.config
+```

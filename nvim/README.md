@@ -22,30 +22,7 @@ This configuration is Python :snake: development oriented
 
 ## Quickstart
 
-Clone the repo to get the configuration
-
-```bash
-git clone --depth 1 https://github.com/alanRizzo/dot-files ~/.config
-```
-
-If you are using zsh paste this in your .zshrc config file
-
-
-```zsh
-function nvimvenv {
-  if [[ -e "$VIRTUAL_ENV" && -f "$VIRTUAL_ENV/bin/activate" ]]; then
-    source "$VIRTUAL_ENV/bin/activate"
-    command nvim $@
-    deactivate
-  else
-    command nvim $@
-  fi
-}
-
-alias vim=nvimvenv
-```
-
-After that install ripgrep and fd for Telescope
+Install ripgrep and fd for Telescope
 
 ```zsh
 brew install ripgrep fd
@@ -53,7 +30,7 @@ brew install ripgrep fd
 
 To install a LSP/DAP/Linter/Formater run:
 
-```bash
+```zsh
 :Mason
 ```
 
