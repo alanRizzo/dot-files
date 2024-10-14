@@ -58,6 +58,15 @@ return require("packer").startup(function(use)
 	-- Formatter
 	use({ "stevearc/conform.nvim" })
 
+  -- Markdown
+  use({
+      'MeanderingProgrammer/render-markdown.nvim',
+      after = { 'nvim-treesitter' },
+      requires = { 'nvim-tree/nvim-web-devicons', opt = true },
+      config = function()
+          require('render-markdown').setup({})
+      end,
+  })
 	-- Navigation panel
 	use({
 		"nvim-telescope/telescope.nvim",
