@@ -40,9 +40,11 @@ If you plan to use per-project virtualenvs often, you should assign one virtuale
 Nvim and hard-code the interpreter path via g:python3_host_prog so that the "pynvim" 
 package is not required for each virtualenv.
 
-Example using pyenv:
+Example using uv:
 
 ```zsh
+mkdir ~/.neovim
+
 uv venv --python {Specify the latest Python3 version}
 source .venv/bin/activate
 
@@ -81,7 +83,6 @@ Leader key: <kbd>'</kbd>
 | <kbd>space</kbd><kbd>u</kbd>   | normal | Fuzzy Find Under cursor Word          |
 | <kbd>space</kbd><kbd>s</kbd>   | normal | Fuzzy Find Behave Step :construction: |
 | <kbd>leader</kbd><kbd>f</kbd>  | normal | Jump to word                          |
-| <kbd>leader</kbd><kbd>md</kbd> | normal | Markdown preview                      |
 | <kbd>leader</kbd><kbd>rn</kbd> | normal | Rename word                           |
 | <kbd>esc</kbd>                 | normal | Turn off search highlighting          |
 
@@ -98,50 +99,40 @@ Windows:
 | <kbd>alt</kbd><kbd>j</kbd>      | normal | Vertical Resize -2%    |
 | <kbd>alt</kbd><kbd>k</kbd>      | normal | Vertical Resize +2%    |
 
-All this mappings are defined in [`mappings.lua`](./general/mappings.lua).
-Shortcut to open it faster: <kbd>leader</kbd><kbd>m</kbd>
+All this mappings are defined in [`mappings.lua`](./lua/config/keymaps.lua).
 
 ## Structure
 
 ```markdown
-$HOME/.config/nvim
-├── lua: General Configuration
-│ ├── aesthetic
-│ │ ├── _bufferline.lua
-│ │ ├── _catpuccin.lua
-│ │ ├── _dashboard.lua
-│ │ ├── _lualine.lua
-│ │ ├── _nvim-tree.lua
-│ │ └── init.lua
-│ ├── general
-│ │ ├── common.lua
-│ │ ├── mappings.lua
-│ │ ├── providers.lua
-│ │ └── init.lua
-│ ├── lsp
-│ │ ├── settings
-│ │ │ ├── pylsp.lua
-│ │ │ └── sumneko_lua.lua
-│ │ ├── _lsp_setup.lua
-│ │ └── init.lua
-│ ├── _cmp.lua
-│ ├── _formatter.lua
-│ ├── _gitsigns.lua
-│ ├── _telescope.lua
-│ └── packages.lua
-└── init.lua
+.
+├── README.md
+├── init.lua
+└── lua
+    ├── config
+    │   ├── keymaps.lua
+    │   ├── lazy.lua
+    │   └── options.lua
+    └── plugins
+        ├── code
+        │   ├── cmp.lua
+        │   ├── formatter.lua
+        │   └── gitsigns.lua
+        ├── lsp
+        │   ├── lsp-zero.lua
+        │   ├── mason.lua
+        │   ├── nvim-lspconfig.lua
+        │   └── settings
+        │       ├── _basedpyright.lua
+        │       ├── _cucumber.lua
+        │       ├── _lua_ls.lua
+        │       └── _ruff.lua
+        └── ui
+            ├── alpha.lua
+            ├── bufferline.lua
+            ├── catppucin.lua
+            ├── lualine.lua
+            ├── mini-icons.lua
+            ├── telescope.lua
+            ├── treesitter.lua
+            └── yazi.lua
 ```
-
-## Additional features
-
-- Default theme via [tokyonight](https://github.com/marko-cerovac/material.nvim)
-- Enhanced syntax highlighting via [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
-- Dashboard via [dashboard-nvim](https://github.com/glepnir/dashboard-nvim)
-- Statusline via [lualine](https://github.com/nvim-lualine/lualine.nvim)
-- Explore files via [nvim-tree](https://github.com/kyazdani42/nvim-tree.lua)
-- Fuzzy finder via [Telescope](https://github.com/nvim-telescope/telescope.nvim)
-- Auto LSP installation via [nvim-lsp-installer](https://github.comwilliamboman/nvim-lsp-installer)
-- Autocompletion via [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
-- Snippet support via [LuaSnip](https://github.com/L3MON4D3/LuaSnip)
-- Buffer management via [bufdel](https://github.com/rmagatti/ojroques/nvim-bufdel)
-- Git support via [gitsigns](https://github.com/lewis6991/gitsigns.nvim)

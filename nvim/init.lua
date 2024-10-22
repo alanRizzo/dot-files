@@ -1,9 +1,3 @@
-require("packages")
-require("aesthetic")
-require("general")
-require("_telescope")
-require("lsp")
-require("_cmp")
-require("_formatter")
-require("_gitsigns")
-require("_tmux_navigation")
+require('config.options');
+require('config.keymaps');
+require("config.lazy")
