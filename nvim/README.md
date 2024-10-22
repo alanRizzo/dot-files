@@ -1,9 +1,9 @@
 <div align="center">
-  <img width="1430" alt="Captura de pantalla 2023-04-14 a la(s) 12 13 57" src="https://user-images.githubusercontent.com/36242460/232085167-2c0a056f-5db5-4ef9-b704-e2a7a1b584ba.png">
+  <img width="1430" alt="Captura de pantalla 2024-10-21 a la(s) 10 10 21" src="https://github.com/user-attachments/assets/6c8cd2e1-c966-4f95-8db4-800362705c1e">
   <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/alanRizzo/dot-files?style=for-the-badge">
   <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/alanRizzo/dot-files?style=for-the-badge">
   <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/alanRizzo/dot-files?style=for-the-badge">
-  <img alt="Neovim Minimum Version" src="https://img.shields.io/badge/Neovim-0.8.0+-blueviolet.svg?style=for-the-badge&logo=Neovim">
+  <img alt="Neovim Minimum Version" src="https://img.shields.io/badge/Neovim-0.9.0+-blueviolet.svg?style=for-the-badge&logo=Neovim">
   <br>
   <p>:boat: My Neovim setup :boat:</p>
 </div>
