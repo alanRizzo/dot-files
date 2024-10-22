@@ -22,10 +22,10 @@ This configuration is Python :snake: development oriented
 
 ## Quickstart
 
-Install ripgrep and fd for Telescope
+Install ripgrep and fd for Telescope and Yazi
 
 ```zsh
-brew install ripgrep fd
+brew install ripgrep fd yazi
 ```
 
 To install a LSP/DAP/Linter/Formater run:

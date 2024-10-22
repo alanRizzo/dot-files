@@ -1,1 +1,3 @@
 
+
+set PTPYTHON_CONFIG_HOME
