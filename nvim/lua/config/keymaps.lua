@@ -21,9 +21,9 @@ vim.keymap.set("n", "<M-h>", ":vertical resize -2<cr>", { desc = "Resize vertica
 vim.keymap.set("n", "<M-l>", ":vertical resize +2<cr>", { desc = "Resize vertical +" })
 
 -- Move between buffers
-vim.keymap.set("n", "<s-l>", ":bn<cr>", { desc = "Next buffer" })
-vim.keymap.set("n", "<s-h>", ":bp<cr>", { desc = "Previous buffer" })
-vim.keymap.set("n", "<s-d>", ":bd<cr>", { desc = "Close buffer" })
+-- vim.keymap.set("n", "<s-l>", ":bn<cr>", { desc = "Next buffer" })
+-- vim.keymap.set("n", "<s-h>", ":bp<cr>", { desc = "Previous buffer" })
+-- vim.keymap.set("n", "<s-d>", ":bp|bd#<cr>", { desc = "Close buffer" })
 
 -- Move between windows
 vim.keymap.set("n", "<c-l>", "<c-w>l", { desc = "Move to right window" })
