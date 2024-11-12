@@ -87,11 +87,33 @@ return {
 					})
 				end,
 
+				rust_analyzer = function()
+					require("lspconfig").rust_analyzer.setup({
+						settings = {
+							["rust-analyzer"] = {},
+						},
+					})
+				end,
+
+				ruff = function()
+					require("lspconfig").ruff.setup({
+						init_options = {
+							settings = {
+								ruff = {
+									lint = {
+										enable = false,
+									},
+								},
+							},
+						},
+					})
+				end,
+
 				basedpyright = function()
 					require("lspconfig").basedpyright.setup({
 						settings = {
 							basedpyright = {
-								disableOrganizeImports = false,
+								disableOrganizeImports = true,
 								typeCheckingMode = "standard",
 							},
 						},
