@@ -1,11 +1,21 @@
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
+local mux = wezterm.mux
+
+-- Windows size ---------------------------------------------------------------
+
+config.native_macos_fullscreen_mode = true
+
+wezterm.on("gui-startup", function(cmd)
+	local tab, pane, window = mux.spawn_window(cmd or {})
+	window:gui_window():toggle_fullscreen()
+end)
 
 -- Aesthetic ------------------------------------------------------------------
 
 config.color_scheme = "Ocean (base16)"
 config.hide_tab_bar_if_only_one_tab = true
-config.font_size = 15
+config.font_size = 12.5
 
 -- Key Binding ----------------------------------------------------------------
 
