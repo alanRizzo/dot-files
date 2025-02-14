@@ -87,6 +87,7 @@ export AUTO_PYTHON_VENV_ROOT="$PWD"
 
 alias fzf='fzf --preview "bat --color=always --style=numbers --line-range=:500 {}"'
 
+alias h=hx
 alias vim=nvim
 
 alias yolo='git commit -m "$(curl -s https://whatthecommit.com/index.txt)"'
@@ -98,3 +99,13 @@ alias gst='git status'
 alias gco='git checkout'
 alias gcm='git checkout main'
 alias gcmsg='git commit --message'
+
+
+# -------------------------------------------------------------------------------------------------
+# Exports
+# -------------------------------------------------------------------------------------------------
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$HOME/.local/bin:$PYENV_ROOT/bin:$PATH"
+export PTPYTHON_CONFIG_HOME="$HOME/.config/ptpython/"
+
