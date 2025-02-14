@@ -1,3 +1,11 @@
+# ============================================================
+# Formatter and Language Server Configuration
+# ============================================================
+
+# ----------------------------
+# Global Formatter Settings
+# ----------------------------
+
 [[language]]
 name = "toml"
 formatter = { command = "taplo", args = ["fmt", "-"] }
@@ -13,6 +21,11 @@ name = "dockerfile"
 formatter = { command = "dockerfile-utils", args = ["format"] }
 auto-format = true
 
+# ----------------------------
+# Language Server Specific Configurations
+# ----------------------------
+
+# --- YAML Language Server ---
 [[language]]
 name = "yaml"
 auto-format = true
@@ -25,6 +38,7 @@ validation = true
 "https://json.schemastore.org/github-workflow.json" = ".github/workflows/*.{yml,yaml}"
 "https://raw.githubusercontent.com/ansible-community/schemas/main/f/ansible-tasks.json" = "roles/{tasks,handlers}/*.{yml,yaml}"
 
+# --- Python ---
 [[language]]
 name = "python"
 language-servers = ["basedpyright", "ruff"]
@@ -47,27 +61,35 @@ args = ["server"]
 [language-server.ruff.config.settings]
 args = ["--ignore", "E501"]
 
+# --- Rust (Rust Analyzer) ---
 [language-server.rust-analyzer.config.check]
 command = "clippy"
 
 [language-server.rust-analyzer.config.cargo]
 features = "all"
 
+# --- Tailwind CSS ---
 [language-server.tailwindcss-ls]
 command = "tailwindcss-language-server"
 args = ["--stdio"]
 
+# ----------------------------
+# Frontend and Other Languages Configuration
+# ----------------------------
+
+# HTML with Tailwind CSS support
 [[language]]
 name = "html"
 language-servers = ["vscode-html-language-server", "tailwindcss-ls"]
 auto-format = true
 
+# CSS with Tailwind CSS support
 [[language]]
 name = "css"
 language-servers = ["vscode-css-language-server", "tailwindcss-ls"]
 auto-format = true
 
-
+# JavaScript configuration
 [[language]]
 name = "javascript"
 language-servers = [
@@ -78,6 +100,7 @@ language-servers = [
 ]
 auto-format = true
 
+# TypeScript configuration
 [[language]]
 name = "typescript"
 language-servers = [
@@ -88,6 +111,7 @@ language-servers = [
 ]
 auto-format = true
 
+# TSX (TypeScript + JSX) with Tailwind CSS support
 [[language]]
 name = "tsx"
 language-servers = [
@@ -99,9 +123,12 @@ language-servers = [
 ]
 auto-format = true
 
-[language-server]
-biome = { command = "biome", args = ["lsp-proxy"] }
+# Biome server (used in JS, TS, TSX, and JSON)
+[language-server.biome]
+command = "biome"
+args = ["lsp-proxy"]
 
+# JSON configuration
 [[language]]
 name = "json"
 language-servers = [
