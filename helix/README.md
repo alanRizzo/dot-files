@@ -7,7 +7,7 @@ This guide will help you set up Helix editor with all necessary language servers
 - Git
 - Cargo (Rust's package manager)
 - Node.js and npm
-- Python 3 and pip
+- Python 3 and uv
 
 ## Basic Installation
 

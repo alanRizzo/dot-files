@@ -58,7 +58,7 @@ install_npm_package() {
 # Function to install pip packages
 install_pip_package() {
   print_info "Installing $1..."
-  pip3 install --user "$1"
+  uv tool install "$1"
   print_success "$1 installed successfully"
 }
 
@@ -86,7 +86,7 @@ if command_exists pip; then
   install_pip_package "basedpyright"
   install_pip_package "ruff"
 else
-  print_error "pip not found. Please install Python and pip first."
+  print_error "uv not found. Please install uv first."
   exit 1
 fi
 
