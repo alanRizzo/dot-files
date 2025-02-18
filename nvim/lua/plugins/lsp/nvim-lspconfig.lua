@@ -56,35 +56,6 @@ return {
 					require("lspconfig")[server_name].setup({})
 				end,
 
-        lua_ls = function()
-          require("lspconfig").lua_ls.setup({
-            on_init = function(client)
-              if client.workspace_folders then
-                local path = client.workspace_folders[1].name
-                if
-                ---@diagnostic disable-next-line: undefined-field
-                    vim.uv.fs_stat(path .. "/.luarc.json") or vim.uv.fs_stat(path .. "/.luarc.jsonc")
-                then
-                  return
-                end
-              end
-							client.config.settings.Lua = vim.tbl_deep_extend("force", client.config.settings.Lua, {
-								runtime = {
-									version = "LuaJIT",
-								},
-								workspace = {
-									checkThirdParty = false,
-									library = {
-										vim.env.VIMRUNTIME,
-									},
-								},
-							})
-						end,
-						settings = {
-							Lua = {},
-						},
-					})
-				end,
 				lua_ls = function()
 					require("lspconfig").lua_ls.setup({
 						on_init = function(client)
@@ -97,6 +68,25 @@ return {
 									return
 								end
 							end
+							client.config.settings.Lua =
+								vim.tbl_deep_extend("force", client.config.settings.Lua or {}, {
+									runtime = {
+										version = "LuaJIT",
+									},
+									workspace = {
+										checkThirdParty = false,
+										library = {
+											vim.env.VIMRUNTIME,
+										},
+									},
+								})
+						end,
+						settings = {
+							Lua = {},
+						},
+					})
+				end,
+
 				rust_analyzer = function()
 					require("lspconfig").rust_analyzer.setup({
 						settings = {
@@ -124,37 +114,6 @@ return {
 						settings = {
 							basedpyright = {
 								disableOrganizeImports = true,
-								typeCheckingMode = "standard",
-							},
-						},
-					})
-				end,
-			},
-		})
-	end,
-							client.config.settings.Lua = vim.tbl_deep_extend("force", client.config.settings.Lua, {
-								runtime = {
-									version = "LuaJIT",
-								},
-								workspace = {
-									checkThirdParty = false,
-									library = {
-										vim.env.VIMRUNTIME,
-									},
-								},
-							})
-						end,
-						settings = {
-							Lua = {},
-						},
-					})
-				end,
-
-				basedpyright = function()
-					require("lspconfig").basedpyright.setup({
-						settings = {
-							basedpyright = {
-								disableOrganizeImports = false,
 								typeCheckingMode = "standard",
 							},
 						},
