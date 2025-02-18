@@ -81,7 +81,7 @@ else
 fi
 
 # Install Python-based language servers
-if command_exists pip; then
+if command_exists uv; then
   print_header "Installing Python-based Language Servers"
   install_pip_package "basedpyright"
   install_pip_package "ruff"
