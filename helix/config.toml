@@ -9,3 +9,14 @@ insert = "bar"
 
 [editor.inline-diagnostics]
 cursor-line = "hint"
+
+[editor.lsp]
+display-progress-messages = false
+display-inlay-hints = false       # experimental
+
+[keys.normal]
+C-l = "rotate_view"
+C-h = "rotate_view_reverse"
+S-l = "goto_next_buffer"
+S-h = "goto_previous_buffer"
+S-d = ":buffer-close"

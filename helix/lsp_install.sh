@@ -75,6 +75,7 @@ if command_exists npm; then
   install_npm_package "@tailwindcss/language-server"
   install_npm_package "@biomejs/biome"
   install_npm_package "vscode-langservers-extracted"
+  install_npm_package "@cucumber/language-server"
 else
   print_error "npm not found. Please install Node.js and npm first."
   exit 1

@@ -21,7 +21,13 @@ name = "dockerfile"
 formatter = { command = "dockerfile-utils", args = ["format"] }
 auto-format = true
 
-# ----------------------------
+
+[[language]]
+name = "groovy"
+auto-format = true
+file-types = ["groovy", { glob = "Jenkinsfile*" }]
+
+## ----------------------------
 # Language Server Specific Configurations
 # ----------------------------
 
@@ -45,6 +51,24 @@ language-servers = ["basedpyright", "ruff"]
 auto-format = true
 roots = ["pyproject.toml", "setup.py", "Poetry.lock"]
 formatter = { command = "ruff", args = ["format", "-"] }
+
+# [language.config.completion.snippets.custom.pdb]
+# prefix = ["pdb"]
+# body = ["__import__('pdb').set_trace()"]
+# description = "Insert pdb call."
+# scope = "expr"
+
+[language.debugger]
+name = "debugpy"
+transport = "stdio"
+command = "python3"
+args = ["-m", "debugpy.adapter"]
+
+[[language.debugger.templates]]
+name = "source"
+request = "launch"
+completion = [{ name = "entrypoint", completion = "filename", default = "." }]
+args = { mode = "debug", program = "{0}" }
 
 [language-server.basedpyright]
 command = "basedpyright-langserver"
@@ -138,3 +162,28 @@ language-servers = [
   "biome",
 ]
 auto-format = true
+
+# ----------------------------
+# BDD tests
+# ----------------------------
+
+[[language]]
+name = "gherkin"
+scope = "source.feature"
+file-types = ["feature"]
+comment-token = "#"
+indent = { tab-width = 2, unit = "  " }
+
+[[grammar]]
+name = "gherkin"
+# source = { git = "https://github.com/SamyAB/tree-sitter-gherkin", rev = "main" }
+# source = { git = "https://github.com/tonycsoka/tree-sitter-gherkin", rev = "main" }
+# source = { git = "https://github.com/binhtran432k/tree-sitter-gherkin", rev = "main" }
+
+
+language-servers = ["cucumber-language-server"]
+auto-format = true
+
+[language-server.cucumber-language-server]
+command = "cucumber-language-server"
+args = ["--stdio"]
