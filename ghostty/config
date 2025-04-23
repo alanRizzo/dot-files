@@ -33,7 +33,7 @@ keybind = cmd+s>9=goto_tab:9
 
 # split
 keybind = cmd+s>v=new_split:right
-keybind = cmd+s>h=new_split:down
+keybind = cmd+s>s=new_split:down
 
 keybind = cmd+s>j=goto_split:bottom
 keybind = cmd+s>k=goto_split:top

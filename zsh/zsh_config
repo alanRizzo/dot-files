@@ -34,12 +34,12 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export EDITOR="nvim"
 
 function y() {
-    local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-    yazi "$@" --cwd-file="$tmp"
-    if cwd="$(command bat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-        builtin cd -- "$cwd"
-    fi
-    rm -f -- "$tmp"
+  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+  yazi "$@" --cwd-file="$tmp"
+  if cwd="$(command bat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+    builtin cd -- "$cwd"
+  fi
+  rm -f -- "$tmp"
 }
 
 # -------------------------------------------------------------------------------------------------
@@ -47,31 +47,32 @@ function y() {
 # -------------------------------------------------------------------------------------------------
 
 auto_python_venv() {
-    local VENV_DIR="./.venv"
-    local CURRENT_DIR="$PWD"
-    local PREVIOUS_DIR="$AUTO_PYTHON_VENV_ROOT"
+  local VENV_DIR="./.venv"
+  local CURRENT_DIR="$PWD"
+  local PREVIOUS_DIR="$AUTO_PYTHON_VENV_ROOT"
 
-    is_not_child_or_same() {
-        local parent=$(realpath "$1")
-        local folder=$(realpath "$2")
-        [[ "$folder" != "$parent" && "$folder" != "$parent"/* ]]
-    }
+  is_not_child_or_same() {
+    local parent=$(realpath "$1")
+    local folder=$(realpath "$2")
+    [[ "$folder" != "$parent" && "$folder" != "$parent"/* ]]
+  }
 
-    if [[ "$CURRENT_DIR" != "$PREVIOUS_DIR" ]]; then
-        # Deactivate virtualenv if it's active and the current directory is unrelated to the parent
-        if [[ -n "$VIRTUAL_ENV" ]] && is_not_child_or_same "$PARENT_DIR" "$CURRENT_DIR"; then
-            deactivate
-        fi
+  # Only act if directory changed
+  if [[ "$CURRENT_DIR" != "$PREVIOUS_DIR" ]]; then
+    # If virtualenv is active and we moved outside its project, deactivate
+    if [[ -n "$VIRTUAL_ENV" ]] && is_not_child_or_same "$(dirname "$VIRTUAL_ENV")" "$CURRENT_DIR"; then
 
-        # Activate virtualenv if .venv exists and no virtualenv is active
-        if [[ -d "$VENV_DIR" && -z $VIRTUAL_ENV ]]; then
-            source "$VENV_DIR/bin/activate"
-            PARENT_DIR=$(dirname "$VIRTUAL_ENV")
-        fi
+      deactivate
     fi
 
-    # Update the root directory
-    export AUTO_PYTHON_VENV_ROOT="$CURRENT_DIR"
+    # If no virtualenv is active and there's a .venv folder, activate it
+    if [[ -d "$VENV_DIR" && -z $VIRTUAL_ENV ]]; then
+      source "$VENV_DIR/bin/activate"
+    fi
+  fi
+
+  # Update root directory
+  export AUTO_PYTHON_VENV_ROOT="$CURRENT_DIR"
 }
 
 # Hook the function to be called when the directory changes
@@ -100,7 +101,6 @@ alias gco='git checkout'
 alias gcm='git checkout main'
 alias gcmsg='git commit --message'
 
-
 # -------------------------------------------------------------------------------------------------
 # Exports
 # -------------------------------------------------------------------------------------------------
@@ -108,4 +108,3 @@ alias gcmsg='git commit --message'
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$HOME/.local/bin:$PYENV_ROOT/bin:$PATH"
 export PTPYTHON_CONFIG_HOME="$HOME/.config/ptpython/"
-
