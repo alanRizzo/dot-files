@@ -24,6 +24,7 @@ A meticulously curated collection of dotfiles that will transform your terminal 
 | [Bat](https://github.com/alanRizzo/dot-files/tree/main/bat) | cat clone with wings |
 | [Helix](https://github.com/alanRizzo/dot-files/tree/main/helix) | Text editing: DNA edition |
 | [Neovim](https://github.com/alanRizzo/dot-files/tree/main/nvim) | Vim but neo-er |
+| [Ghostty](https://github.com/alanRizzo/dot-files/tree/main/ghostty) | A configless fast & furious terminal |
 | [Ptpython](https://github.com/alanRizzo/dot-files/tree/main/ptpython) | Python REPL that actually respects you |
 | [Ruff](https://github.com/alanRizzo/dot-files/tree/main/ruff) | Makes your Python less rough |
 | [Starship](https://github.com/alanRizzo/dot-files/tree/main/starship) | Enterprise-grade prompt |
