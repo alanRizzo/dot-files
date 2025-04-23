@@ -1,73 +1,74 @@
 # ~/.config
 
-> "There are two types of developers: those who backup their dotfiles, and those who will." 
-> -- Ancient Unix Proverb
+> “There are two types of devs:  
+> those who back up their dotfiles,  
+> and those who *will* — right after a catastrophic wipe.”  
+> — Ancient Shell Scrolls 🧙‍♂️
 
 ## What's this? 🤔
 
-A meticulously curated collection of dotfiles that will transform your terminal into a cyberpunk command center. These configs have been battle-tested in countless late-night coding sessions and certified by the Department of Terminal Aesthetics™.
+Just a bag of stuff that might help you... or not.
 
 <div align="center">
   <pre>
   $ whoami
-  → just another developer trying to make their terminal look cooler than their code
+  → just another dev trying to make their terminal prettier than their productivity
   </pre>
 </div>
+
+---
 
 ## Featured Programs 🚀
 
 <div align="center">
 
 | Program | What it does |
-|---------|-------------|
-| [Alacritty](https://github.com/alanRizzo/dot-files/tree/main/alacritty) | Makes your terminal go brrrr |
-| [Bat](https://github.com/alanRizzo/dot-files/tree/main/bat) | cat clone with wings |
-| [Helix](https://github.com/alanRizzo/dot-files/tree/main/helix) | Text editing: DNA edition |
-| [Neovim](https://github.com/alanRizzo/dot-files/tree/main/nvim) | Vim but neo-er |
-| [Ghostty](https://github.com/alanRizzo/dot-files/tree/main/ghostty) | A configless fast & furious terminal |
-| [Ptpython](https://github.com/alanRizzo/dot-files/tree/main/ptpython) | Python REPL that actually respects you |
-| [Ruff](https://github.com/alanRizzo/dot-files/tree/main/ruff) | Makes your Python less rough |
-| [Starship](https://github.com/alanRizzo/dot-files/tree/main/starship) | Enterprise-grade prompt |
-| [Tmux](https://github.com/alanRizzo/dot-files/tree/main/tmux) | Terminal multiplexer (fancy words for "terminal inception") |
-| [Wezterm](https://github.com/alanRizzo/dot-files/tree/main/wezterm) | Terminal emulator from the future |
-| [Yazi](https://github.com/alanRizzo/dot-files/tree/main/yazi) | File manager that sparks joy |
-| [Zed](https://github.com/alanRizzo/dot-files/tree/main/zed) | Editor that zeds the competition |
-| [Zsh](https://github.com/alanRizzo/dot-files/tree/main/zsh) | Because bash is so 1989 |
+|---------|--------------|
+| [Alacritty](https://github.com/alanRizzo/dot-files/tree/main/alacritty) | Terminal that goes *zoom zoom* |
+| [Bat](https://github.com/alanRizzo/dot-files/tree/main/bat) | `cat` but with a cape and syntax swagger |
+| [Helix](https://github.com/alanRizzo/dot-files/tree/main/helix) | Text editing on a genetic level |
+| [Neovim](https://github.com/alanRizzo/dot-files/tree/main/nvim) | Vim, but it took the red pill |
+| [Ghostty](https://github.com/alanRizzo/dot-files/tree/main/ghostty) | Fast, configless, and spooky-good |
+| [Ptpython](https://github.com/alanRizzo/dot-files/tree/main/ptpython) | A Python REPL that respects you |
+| [Ruff](https://github.com/alanRizzo/dot-files/tree/main/ruff) | Linting that keeps your Python smooth |
+| [Starship](https://github.com/alanRizzo/dot-files/tree/main/starship) | Prompt with warp speed and good taste |
+| [Tmux](https://github.com/alanRizzo/dot-files/tree/main/tmux) | Terminal Inception: screens inside screens |
+| [Wezterm](https://github.com/alanRizzo/dot-files/tree/main/wezterm) | A terminal emulator from the year 3000 |
+| [Yazi](https://github.com/alanRizzo/dot-files/tree/main/yazi) | File manager that sparks joy (KonMari for CLI) |
+| [Zed](https://github.com/alanRizzo/dot-files/tree/main/zed) | Editor with final boss energy |
+| [Zsh](https://github.com/alanRizzo/dot-files/tree/main/zsh) | Because bash peaked in 1989 |
 
 </div>
 
-## Quick Start 🏃‍♂️
+---
 
-To embrace the power of these dotfiles, simply run:
+## Quick Start ⚡
+
+Clone this repo and instantly upgrade your shell game:
 
 ```bash
 git clone --depth 1 https://github.com/alanRizzo/dot-files ~/.config
-# Congratulations! Your terminal is now 73% more powerful
+
+# 🛠️ BOOM! Your terminal is now 73% more legendary.
 ```
 
-<details>
-<summary>🎲 Random Terminal Wisdom</summary>
-
-- Time spent on perfecting your dotfiles is inversely proportional to time spent actually coding
-- The best line of code is the one you don't have to write
-- All paths lead to ~/.config
-- vim or emacs? Yes.
-
-</details>
+---
 
 ## License 📜
 
-Licensed under the "Do What You Want But Don't Blame Me" License
-(DWYWBDBM-1.0)
+**DWYWBDBM-1.0**  
+_Do What You Want But Don’t Blame Me_
+
+> Use it. Fork it. Show it off. But if something breaks… not my fault 😅
 
 ---
 
 <div align="center">
   <pre>
-  $ echo "Happy Hacking!" | cowsay
-   ________________
-  < Happy Hacking! >
-   ----------------
+  $ echo "Hack the Planet!" | cowsay
+   _______________________
+  < Hack the Planet! 💻🌍 >
+   -----------------------
           \   ^__^
            \  (oo)\_______
               (__)\       )\/\
