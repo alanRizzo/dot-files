@@ -101,6 +101,7 @@ alias gco='git checkout'
 alias gcm='git checkout main'
 alias gcmsg='git commit --message'
 alias gpsup='git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)'
+alias go='git-open'
 
 # -------------------------------------------------------------------------------------------------
 # Exports
