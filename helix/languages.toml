@@ -44,19 +44,18 @@ validation = true
 "https://json.schemastore.org/github-workflow.json" = ".github/workflows/*.{yml,yaml}"
 "https://raw.githubusercontent.com/ansible-community/schemas/main/f/ansible-tasks.json" = "roles/{tasks,handlers}/*.{yml,yaml}"
 
+# --- Toml ---
+[[languages]]
+name = "toml"
+language-servers = ["taplo", "tabby"]
+
 # --- Python ---
 [[language]]
 name = "python"
-language-servers = ["basedpyright", "ruff"]
+language-servers = ["basedpyright", "ruff", "tabby"]
 auto-format = true
 roots = ["pyproject.toml", "setup.py", "Poetry.lock"]
 formatter = { command = "ruff", args = ["format", "-"] }
-
-# [language.config.completion.snippets.custom.pdb]
-# prefix = ["pdb"]
-# body = ["__import__('pdb').set_trace()"]
-# description = "Insert pdb call."
-# scope = "expr"
 
 [language.debugger]
 name = "debugpy"
@@ -187,3 +186,11 @@ auto-format = true
 [language-server.cucumber-language-server]
 command = "cucumber-language-server"
 args = ["--stdio"]
+
+# ----------------------------
+# Tabby
+# ----------------------------
+
+[language-server.tabby]
+command = "npx"
+args = ["tabby-agent", "--stdio"]

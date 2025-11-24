@@ -3,20 +3,104 @@ theme = "catppuccin_frappe"
 [editor]
 auto-format = true
 bufferline = "multiple"
+line-number = "relative"
+cursorline = true
+cursorcolumn = false
+idle-timeout = 250
+completion-timeout = 250
+preview-completion-insert = true
+completion-trigger-len = 2
+completion-replace = false
+auto-info = true
+true-color = true
+color-modes = true
+workspace-lsp-roots = []
+
+[editor.statusline]
+left = [
+  "mode",
+  "spinner",
+  "version-control",
+  "file-name",
+  "file-modification-indicator",
+]
+center = ["diagnostics"]
+
+right = ["file-type", "selections", "position", "position-percentage"]
+separator = "│"
+
+[editor.lsp]
+display-messages = true
+auto-signature-help = true
+
+display-signature-help-docs = true
+snippets = true
+goto-reference-include-declaration = true
 
 [editor.cursor-shape]
 insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+git-ignore = true
+git-global = true
+git-exclude = true
+max-depth = 5
+
+[editor.search]
+smart-case = true
+wrap-around = true
+
+[editor.whitespace]
+render = { space = "none", tab = "all", newline = "none" }
+characters = { space = "·", nbsp = "⍽", tab = "→", newline = " " }
+
+[editor.indent-guides]
+render = true
+character = "▏"
+skip-levels = 1
+
+[editor.gutters]
+layout = ["diagnostics", "spacer", "line-numbers", "spacer", "diff"]
+
+[editor.soft-wrap]
+enable = true
+max-wrap = 25
+max-indent-retain = 40
+wrap-indicator = "↩ "
 
 [editor.inline-diagnostics]
 cursor-line = "hint"
+other-lines = "disable"
 
-[editor.lsp]
-display-progress-messages = false
-display-inlay-hints = false       # experimental
 
 [keys.normal]
-C-l = "rotate_view"
+# Window navigation
 C-h = "rotate_view_reverse"
-S-l = "goto_next_buffer"
+C-l = "rotate_view"
+C-j = "jump_view_down"
+C-k = "jump_view_up"
+
+# Buffer navigation
 S-h = "goto_previous_buffer"
+S-l = "goto_next_buffer"
 S-d = ":buffer-close"
+
+# Quick actions
+C-s = ":write"
+X = "extend_line_above"
+
+# Git blame (keep your custom one)
+space.B = ":echo %sh{git show --no-patch --format='%%h (%%an: %%ar): %%s' $(git blame -p %{buffer_name} -L%{cursor_line},+1 | head -1 | cut -d' ' -f1)}"
+space.I = ":insert-output echo '__import__(\"pdb\").set_trace()'"
+
+[keys.insert]
+# Better completion navigation
+C-j = "move_line_down"
+C-k = "move_line_up"
+C-space = "completion"
+
+[keys.select]
+X = "extend_line_above"
