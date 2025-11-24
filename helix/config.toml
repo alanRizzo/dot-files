@@ -92,9 +92,8 @@ S-d = ":buffer-close"
 C-s = ":write"
 X = "extend_line_above"
 
-# Git blame (keep your custom one)
 space.B = ":echo %sh{git show --no-patch --format='%%h (%%an: %%ar): %%s' $(git blame -p %{buffer_name} -L%{cursor_line},+1 | head -1 | cut -d' ' -f1)}"
-space.I = ":insert-output echo '__import__(\"pdb\").set_trace()'"
+space.i = ":insert-output echo '__import__(\"pdb\").set_trace()'"
 
 [keys.insert]
 # Better completion navigation
