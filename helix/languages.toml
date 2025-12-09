@@ -172,20 +172,21 @@ scope = "source.feature"
 file-types = ["feature"]
 comment-token = "#"
 indent = { tab-width = 2, unit = "  " }
+# cucumber-language-server doesn't work well with Python/Behave projects
+# language-servers = ["cucumber-language-server"]
+auto-format = false
 
 [[grammar]]
 name = "gherkin"
-# source = { git = "https://github.com/SamyAB/tree-sitter-gherkin", rev = "main" }
-# source = { git = "https://github.com/tonycsoka/tree-sitter-gherkin", rev = "main" }
-# source = { git = "https://github.com/binhtran432k/tree-sitter-gherkin", rev = "main" }
-
-
-language-servers = ["cucumber-language-server"]
-auto-format = true
+source = { git = "https://github.com/binhtran432k/tree-sitter-gherkin", rev = "main" }
 
 [language-server.cucumber-language-server]
 command = "cucumber-language-server"
 args = ["--stdio"]
+
+[language-server.cucumber-language-server.config.cucumber]
+features = ["features/**/*.feature"]
+glue = ["features/steps/**/*.py"]
 
 # ----------------------------
 # Tabby

@@ -1,6 +1,7 @@
 github-copilot/
 
 nvim/lazy-lock.json
+helix/runtime/
 
 *.tmp
 *.temp
