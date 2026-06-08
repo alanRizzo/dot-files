@@ -119,8 +119,14 @@ language-servers = [
   { name = "typescript-language-server", except-features = [
     "format",
   ] },
-  "biome",
+  { name = "biome", except-features = [
+    "format",
+  ] },
 ]
+formatter = { command = "prettierd", args = [
+  "--stdin-filepath",
+  "%{buffer_name}",
+] }
 auto-format = true
 
 # TypeScript configuration
@@ -130,8 +136,14 @@ language-servers = [
   { name = "typescript-language-server", except-features = [
     "format",
   ] },
-  "biome",
+  { name = "biome", except-features = [
+    "format",
+  ] },
 ]
+formatter = { command = "prettierd", args = [
+  "--stdin-filepath",
+  "%{buffer_name}",
+] }
 auto-format = true
 
 # TSX (TypeScript + JSX) with Tailwind CSS support
@@ -141,9 +153,15 @@ language-servers = [
   { name = "typescript-language-server", except-features = [
     "format",
   ] },
-  "biome",
+  { name = "biome", except-features = [
+    "format",
+  ] },
   "tailwindcss-ls",
 ]
+formatter = { command = "prettierd", args = [
+  "--stdin-filepath",
+  "%{buffer_name}",
+] }
 auto-format = true
 
 # Biome server (used in JS, TS, TSX, and JSON)

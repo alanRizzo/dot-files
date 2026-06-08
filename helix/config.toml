@@ -17,13 +17,7 @@ color-modes = true
 workspace-lsp-roots = []
 
 [editor.statusline]
-left = [
-  "mode",
-  "spinner",
-  "version-control",
-  "file-name",
-  "file-modification-indicator",
-]
+left = ["mode", "spinner", "file-name", "file-modification-indicator"]
 center = ["diagnostics"]
 
 right = ["file-type", "selections", "position", "position-percentage"]
@@ -87,7 +81,9 @@ S-d = ":buffer-close"
 C-s = ":write"
 X = "extend_line_above"
 
+# Git blame for the current line
 space.B = ":echo %sh{git show --no-patch --format='%%h (%%an: %%ar): %%s' $(git blame -p %{buffer_name} -L%{cursor_line},+1 | head -1 | cut -d' ' -f1)}"
+# Insert a Python breakpoint
 space.i = ":insert-output echo '__import__(\"pdb\").set_trace()'"
 
 [keys.insert]

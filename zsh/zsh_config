@@ -89,7 +89,7 @@ export AUTO_PYTHON_VENV_ROOT="$PWD"
 alias fzf='fzf --preview "bat --color=always --style=numbers --line-range=:500 {}"'
 
 alias h=hx
-alias vim=nvim
+alias v=nvim
 
 alias yolo='git commit -m "$(curl -s https://whatthecommit.com/index.txt)"'
 alias gl='git pull'
